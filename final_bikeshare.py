@@ -15,12 +15,36 @@ day_names = ['monday','tuesday','wednesday', 'thursday', 'friday','saturday','su
 def get_filters():
 
     print('Hello! Let\'s explore some US bikeshare data!')
+<<<<<<< HEAD
 
+||||||| 379e57b
+
+
+=======
+
+
+>>>>>>> documentation
     city = input ("Enter a city you would like to analyze: " ).lower()
+<<<<<<< HEAD
+||||||| 379e57b
+
+=======
+
+>>>>>>> documentation
     print('Now searching within ',city)
     print ('')
     while city not in city_names:
+<<<<<<< HEAD
         city = input ('Could not find that city, please type the city name correctly: ').lower()
+||||||| 379e57b
+        city = input ('Could not find that city, please type the city name correctly: ').lower()
+
+
+=======
+        city = input ('Could not find that city, please type the city name correctly: ').lower()
+
+
+>>>>>>> documentation
 
     # TO DO: get user input for month (all, january, february, ... , june)
     month = input ('Enter a specific month you would like to analyze or type "All" to see all: ').lower()
@@ -198,8 +222,11 @@ def display_raw_data(df):
             user_question = input('Would you like to see more data? Please enter yes or no:').lower()
 
 
+
+
 def main():
     start_program = input ('Would you like to start the program? type yes or no: ')
+    #get the user to input a yes or no value to start the while loop which will display the statistics
     while start_program == 'yes':
         city, month, day = get_filters()
         df = load_data(city, month, day)
@@ -223,6 +250,12 @@ def main():
 
         display_raw_data (df)
         break
+
+
+
+
+
+
 
 if __name__ == "__main__":
 	main()
