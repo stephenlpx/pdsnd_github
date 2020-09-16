@@ -16,15 +16,11 @@ def get_filters():
 
     print('Hello! Let\'s explore some US bikeshare data!')
 
-
     city = input ("Enter a city you would like to analyze: " ).lower()
-
     print('Now searching within ',city)
     print ('')
     while city not in city_names:
         city = input ('Could not find that city, please type the city name correctly: ').lower()
-
-
 
     # TO DO: get user input for month (all, january, february, ... , june)
     month = input ('Enter a specific month you would like to analyze or type "All" to see all: ').lower()
@@ -75,11 +71,7 @@ def load_data(city, month, day):
         #create an index for the days of the week using integers to be filtered by
         df = df[df['day_of_week'] == day.title()]
 
-
-
     return df
-
-
 
 def time_stats(df):
     """Displays statistics on the most frequent times of travel."""
@@ -92,8 +84,6 @@ def time_stats(df):
     df['month'] = df['Start Time'].dt.month
     #use mode to find the most frequent month value
     pop_month = df['month'].mode()
-
-
     print ('The most popular month which is travelled is: ', pop_month)
     print (' ')
 
@@ -102,8 +92,6 @@ def time_stats(df):
     #use mode to find the most frequent day of week value
     df['day'] = df['Start Time'].dt.day
     pop_day = df['day'].mode()
-
-
 
     # TO DO: display the most common start hour
     df['Start Time'] = pd.to_datetime(df['Start Time'])
@@ -115,8 +103,6 @@ def time_stats(df):
     print (' ')
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
-
-
 
 
 def station_stats(df):
@@ -202,10 +188,6 @@ def user_stats(df):
     print('-'*40)
 
 
-
-
-
-
 def display_raw_data(df):
         i=0
         user_question=input('Would you like to see the raw data?\ntype yes or no: ').lower()
@@ -214,8 +196,6 @@ def display_raw_data(df):
             print(df.iloc[i:i+5])
             i += 5
             user_question = input('Would you like to see more data? Please enter yes or no:').lower()
-
-
 
 
 def main():
@@ -243,12 +223,6 @@ def main():
 
         display_raw_data (df)
         break
-
-
-
-
-
-
 
 if __name__ == "__main__":
 	main()
